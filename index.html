@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="de" class="h-full lg:overflow-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amir Doorandish | AI Product Manager & Agile Coach</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght=0,600;1,400&display=swap');
+        
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .serif-font { font-family: 'Playfair Display', serif; }
+        
+        /* فرمول اختصاصی برش قوسی ته عکس متناسب با الگو */
+        .arch-cut {
+            clip-path: ellipse(50% 50% at 50% 50%);
+            -webkit-clip-path: padding-box;
+            border-bottom-left-radius: 9999px;
+            border-bottom-right-radius: 9999px;
+        }
+        /* جلوگیری از رفتار پیش‌فرض مخفی‌سازی تا اعمال جاوااسکریپت */
+        [data-lang]:hidden { display: none !important; }
+    </style>
+</head>
+<body class="bg-[#deded8] text-[#1a1a1a] h-full flex flex-col justify-between overflow-x-hidden lg:overflow-hidden selection:bg-stone-800 selection:text-white pt-0 px-4 md:px-8 pb-4">
+
+    <div class="w-full flex flex-col justify-between max-w-[1600px] mx-auto h-full">
+        
+        <!-- 1. هدر شامل نام و کلید سوییچ زبان دو حالته -->
+        <header class="w-full flex justify-between items-center py-4 z-20 shrink-0">
+            <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-[#1a1a1a]"></span>
+                <span class="font-extrabold text-sm tracking-widest uppercase">AMIR DOORANDISH</span>
+            </div>
+            
+            <!-- کلید سوییچ زبان -->
+            <div class="flex items-center bg-stone-300/60 p-1 rounded-xl border border-stone-400/40 text-xs font-bold shadow-sm">
+                <button onclick="setLanguage('de')" id="btn-de" class="px-3 py-1.5 rounded-lg transition-all bg-[#1a1a1a] text-white">DE</button>
+                <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1.5 rounded-lg transition-all text-stone-600 hover:text-stone-900">EN</button>
+            </div>
+        </header>
+
+        <!-- 2. بخش بدنه اصلی (برگشت به سایزهای بزرگ و قدرتمند قبلی با کنترل فواصل مرده) -->
+        <main class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center flex-grow py-2">
+            
+            <!-- ستون سمت چپ: اسم، عنوان و پرسونال سامری (قفل شده در بالا با باکس نگهدارنده ثابت برای جلوگیری از پرش متن) -->
+            <div class="lg:col-span-4 text-left z-10 self-center">
+                <div class="min-h-[60px] flex flex-col justify-end">
+                    <p class="text-sm font-semibold text-stone-600 tracking-wide" data-lang="de">Hallo, ich bin Amir</p>
+                    <p class="text-sm font-semibold text-stone-600 tracking-wide" data-lang="en" style="display:none;">Hi, I am Amir</p>
+                </div>
+                
+                <h1 class="text-4xl xl:text-5xl font-black tracking-tight leading-[1.1] text-stone-950 uppercase mt-2">
+                    AI Product <br>Manager <br>
+                    <span class="serif-font italic font-normal text-stone-800 tracking-normal capitalize block my-1">&amp;</span> 
+                    Agile Coach
+                </h1>
+                
+                <div class="min-h-[120px] mt-4">
+                    <!-- خلاصه به زبان آلمانی -->
+                    <p class="text-sm xl:text-base text-stone-700 font-medium leading-relaxed max-w-sm" data-lang="de">
+                        Ich verbinde künstliche Intelligenz mit agiler Produktentwicklung. Ich helfe Unternehmen, komplexe KI-Technologien in einfache, nutzerzentrierte Produkte zu verwandeln – schnell, flexibel und mit echtem Mehrwert für den DACH-Markt.
+                    </p>
+                    <!-- خلاصه به زبان انگلیسی -->
+                    <p class="text-sm xl:text-base text-stone-700 font-medium leading-relaxed max-w-sm" data-lang="en" style="display:none;">
+                        I bridge the gap between Artificial Intelligence and agile product development. I empower organizations to transform complex AI models into user-centric products—delivered fast, flexibly, and with real business impact.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ستون وسط: عکس با ابعاد بزرگ و مقتدرانه متصل به سقف بدون ایجاد اسکرول -->
+            <div class="lg:col-span-4 flex justify-center items-start h-full lg:-mt-10">
+                <div class="relative w-72 h-[26rem] xl:w-80 xl:h-[31rem] bg-stone-300/40 arch-cut border border-stone-400/20 shadow-sm overflow-hidden flex items-center justify-center">
+                    <img src="profile.jpg" alt="Amir Doorandish" class="w-full h-full object-cover object-top" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                    <div id="placeholder-box" class="hidden flex flex-col items-center space-y-2 text-stone-400">
+                        <i class="fa-solid fa-user-tie text-5xl"></i>
+                        <span class="text-[10px] font-bold uppercase tracking-widest">profile.jpg missing</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ستون سمت راست: برگشت به لوگوهای بزرگ گواهینامه‌ها (w-20 h-20) با نوشته‌های وسط‌چین -->
+            <div class="lg:col-span-4 flex flex-col items-center lg:items-end justify-center h-full z-10">
+                <div class="w-full max-w-md">
+                    <div class="grid grid-cols-2 gap-x-6 gap-y-6 w-full">
+                        
+                        <!-- === ستون سمت چپ گرید === -->
+                        <div class="space-y-6 flex flex-col items-center lg:items-end justify-start">
+                            <!-- گواهینامه ۱ چپ -->
+                            <div class="flex flex-col items-center text-center lg:items-end lg:text-right group">
+                                <div class="w-20 h-20 bg-stone-900/5 rounded-2xl border border-stone-900/10 flex items-center justify-center group-hover:bg-[#1a1a1a] transition-all p-2 mb-2">
+                                    <img src="badge4.png" alt="PSPO-AI" class="max-h-full max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                    <i class="fa-solid fa-brain text-2xl text-stone-500 group-hover:text-white hidden"></i>
+                                </div>
+                                <h4 class="text-[11px] font-bold text-stone-900 uppercase tracking-wider leading-tight max-w-[140px]">Professional Scrum Product Owner-AI</h4>
+                            </div>
+
+                            <!-- گواهینامه ۲ چپ -->
+                            <div class="flex flex-col items-center text-center lg:items-end lg:text-right group">
+                                <div class="w-20 h-20 bg-stone-900/5 rounded-2xl border border-stone-900/10 flex items-center justify-center group-hover:bg-[#1a1a1a] transition-all p-2 mb-2">
+                                    <img src="badge3.png" alt="PSM II" class="max-h-full max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                    <i class="fa-solid fa-graduation-cap text-2xl text-stone-500 group-hover:text-white hidden"></i>
+                                </div>
+                                <h4 class="text-[11px] font-bold text-stone-900 uppercase tracking-wider leading-tight max-w-[140px]">Professional Scrum Master II</h4>
+                            </div>
+
+                            <!-- گواهینامه ۳ چپ -->
+                            <div class="flex flex-col items-center text-center lg:items-end lg:text-right group">
+                                <div class="w-20 h-20 bg-stone-900/5 rounded-2xl border border-stone-900/10 flex items-center justify-center group-hover:bg-[#1a1a1a] transition-all p-2 mb-2">
+                                    <img src="badge6.png" alt="Psychological Safety" class="max-h-full max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                    <i class="fa-solid fa-shield-heart text-2xl text-stone-500 group-hover:text-white hidden"></i>
+                                </div>
+                                <h4 class="text-[11px] font-bold text-stone-900 uppercase tracking-wider leading-tight max-w-[140px]">Psychological Safety: Train The Trainer</h4>
+                            </div>
+                        </div>
+
+                        <!-- === ستون سمت راست گرید === -->
+                        <div class="space-y-6 flex flex-col items-center lg:items-end justify-start">
+                            <!-- گواهینامه ۱ راست -->
+                            <div class="flex flex-col items-center text-center lg:items-end lg:text-right group">
+                                <div class="w-20 h-20 bg-stone-900/5 rounded-2xl border border-stone-900/10 flex items-center justify-center group-hover:bg-[#1a1a1a] transition-all p-2 mb-2">
+                                    <img src="badge5.png" alt="PSPO II" class="max-h-full max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                    <i class="fa-solid fa-award text-2xl text-stone-500 group-hover:text-white hidden"></i>
+                                </div>
+                                <h4 class="text-[11px] font-bold text-stone-900 uppercase tracking-wider leading-tight max-w-[140px]">Professional Scrum Product Owner II</h4>
+                            </div>
+
+                            <!-- گواهینامه ۲ راست -->
+                            <div class="flex flex-col items-center text-center lg:items-end lg:text-right group">
+                                <div class="w-20 h-20 bg-stone-900/5 rounded-2xl border border-stone-900/10 flex items-center justify-center group-hover:bg-[#1a1a1a] transition-all p-2 mb-2">
+                                    <img src="badge1.png" alt="Agile Coach" class="max-h-full max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                    <i class="fa-solid fa-compass text-2xl text-stone-500 group-hover:text-white hidden"></i>
+                                </div>
+                                <h4 class="text-[11px] font-bold text-stone-900 uppercase tracking-wider leading-tight max-w-[140px]">Agile Coaching Certification</h4>
+                            </div>
+
+                            <!-- گواهینامه ۳ راست -->
+                            <div class="flex flex-col items-center text-center lg:items-end lg:text-right group">
+                                <div class="w-20 h-20 bg-stone-900/5 rounded-2xl border border-stone-900/10 flex items-center justify-center group-hover:bg-[#1a1a1a] transition-all p-2 mb-2">
+                                    <img src="badge2.png" alt="SAFe" class="max-h-full max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                    <i class="fa-solid fa-cubes text-2xl text-stone-500 group-hover:text-white hidden"></i>
+                                </div>
+                                <h4 class="text-[11px] font-bold text-stone-900 uppercase tracking-wider leading-tight max-w-[140px]">Certified SAFe® 5 Scrum Master</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 3. فوتر با باکس پروژه بهینه‌شده (۷ ستون) و باکس تماس فشرده (۵ ستون) کاملاً چسبیده به پایین بدون تداخل -->
+        <footer class="w-full grid grid-cols-1 md:grid-cols-12 gap-6 pt-5 border-t border-stone-400/40 z-20 shrink-0 mt-2">
+            
+            <!-- باکس چپ: توضیحات کامل و جذاب پروژه MindMittel -->
+            <div class="md:col-span-7 bg-stone-950 text-stone-100 p-5 rounded-2xl flex flex-col justify-between items-start group hover:bg-stone-900 transition-all shadow-sm">
+                <div class="w-full">
+                    <div class="flex justify-between items-center w-full mb-1">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-blue-400" data-lang="de">Aktives KI-Produkt-Ökosystem</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-blue-400" data-lang="en" style="display:none;">Active AI Product Ecosystem</span>
+                        <span class="text-[9px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-1.5 py-0.5 rounded">Live</span>
+                    </div>
+                    <h3 class="text-base font-bold uppercase tracking-wider text-white">MindMittel App</h3>
+                    
+                    <!-- توضیحات آلمانی -->
+                    <div class="text-xs text-stone-400 mt-2 leading-relaxed space-y-2" data-lang="de">
+                        <p>MindMittel ist eine KI-gestützte Governance- und Audit-Plattform für das moderne Management. Das System nutzt fortschrittliche LLM-Strukturen (Gemini Framework), um strategische Unternehmensentscheidungen in Echtzeit gegen eine zentrale Wissensdatenbank zu prüfen.</p>
+                        <p class="text-stone-500 text-[11px]"><i class="fa-solid fa-circle-check text-blue-500 mr-1"></i> **Features:** Multimodaler Input (Text, PDF, Audio) &amp; automatisierte Generierung rechtssicherer Audit-Berichte als zertifiziertes deutsches PDF.</p>
+                    </div>
+                    <!-- توضیحات انگلیسی -->
+                    <div class="text-xs text-stone-400 mt-2 leading-relaxed space-y-2" data-lang="en" style="display:none;">
+                        <p>MindMittel is an AI-driven governance and decision-audit engine designed for executive leadership. It leverages deep language learning structures (Gemini Framework) to cross-examine corporate strategies against a unified enterprise knowledge base in real time.</p>
+                        <p class="text-stone-500 text-[11px]"><i class="fa-solid fa-circle-check text-blue-400 mr-1"></i> **Features:** Multimodal ingestion (Text, PDF, Audio) &amp; automated generation of certified, compliant audit reports in structured German PDF formats.</p>
+                    </div>
+                </div>
+                
+                <a href="https://mindmittel.doorandish.app" target="_blank" class="mt-4 inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded-xl transition-all">
+                    <span data-lang="de">App öffnen</span><span data-lang="en" style="display:none;">Launch App</span> <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                </a>
+            </div>
+
+            <!-- باکس راست: اطلاعات تماس شیک و فشرده بدون فضای خالی مرده -->
+            <div class="md:col-span-5 bg-stone-400/20 border border-stone-400/30 p-5 rounded-2xl flex flex-col justify-between items-start">
+                <div class="w-full">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-stone-600 block mb-3" data-lang="de">Kontakt &amp; Netzwerk</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-stone-600 block mb-3" data-lang="en" style="display:none;">Contact &amp; Network</span>
+                    
+                    <div class="space-y-3 w-full">
+                        <!-- موبایل -->
+                        <a href="tel:017684670822" class="flex items-center space-x-3 group text-stone-800 hover:text-stone-950 transition-colors w-full">
+                            <div class="w-8 h-8 rounded-lg bg-stone-900/5 group-hover:bg-stone-950 group-hover:text-white border border-stone-900/10 flex items-center justify-center transition-all">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </div>
+                            <span class="text-xs font-bold tracking-wider">017684670822</span>
+                        </a>
+
+                        <!-- ایمیل -->
+                        <a href="mailto:Amir.Doorandish@Gmail.com" class="flex items-center space-x-3 group text-stone-800 hover:text-stone-950 transition-colors w-full">
+                            <div class="w-8 h-8 rounded-lg bg-stone-900/5 group-hover:bg-stone-950 group-hover:text-white border border-stone-900/10 flex items-center justify-center transition-all">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </div>
+                            <span class="text-xs font-bold tracking-wider">Amir.Doorandish@Gmail.com</span>
+                        </a>
+
+                        <!-- لینکدین -->
+                        <a href="https://linkedin.com/in/amir-doorandish/" target="_blank" class="flex items-center space-x-3 group text-stone-800 hover:text-stone-950 transition-colors w-full">
+                            <div class="w-8 h-8 rounded-lg bg-stone-900/5 group-hover:bg-stone-950 group-hover:text-white border border-stone-900/10 flex items-center justify-center transition-all">
+                                <i class="fa-brands fa-linkedin-in text-xs"></i>
+                            </div>
+                            <span class="text-xs font-bold tracking-wider">linkedin.com/in/amir-doorandish/</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- فوتر نهایی -->
+                <div class="w-full flex justify-between items-center mt-4 pt-2 border-t border-stone-400/40 text-[10px] text-stone-600 font-bold">
+                    <span>München, DE</span>
+                    <span>&copy; 2026 Amir Doorandish.</span>
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- اسکریپت کنترل زبان -->
+    <script>
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                if (el.getAttribute('data-lang') === lang) {
+                    el.style.setProperty('display', '', 'important');
+                } else {
+                    el.style.setProperty('display', 'none', 'important');
+                }
+            });
+
+            const btnDe = document.getElementById('btn-de');
+            const btnEn = document.getElementById('btn-en');
+            
+            if (lang === 'de') {
+                btnDe.className = "px-3 py-1.5 rounded-lg transition-all bg-[#1a1a1a] text-white";
+                btnEn.className = "px-3 py-1.5 rounded-lg transition-all text-stone-600 hover:text-stone-900";
+            } else {
+                btnEn.className = "px-3 py-1.5 rounded-lg transition-all bg-[#1a1a1a] text-white";
+                btnDe.className = "px-3 py-1.5 rounded-lg transition-all text-stone-600 hover:text-stone-900";
+            }
+        }
+    </script>
+</body>
+</html>
